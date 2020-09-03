@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@color/background_color"
-    android:padding="@dimen/margin_bottom"
     tools:context=".MainActivity">
 
     <TextView
@@ -40,7 +40,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/question_1"
                     android:textColor="@color/button_background_reset"
                     android:textSize="@dimen/team_label_size" />
@@ -48,6 +47,7 @@
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     android:orientation="vertical">
 
                     <RadioButton
@@ -73,79 +73,55 @@
                 </RadioGroup>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/question2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/question_2"
+                    android:text="Enter the name of the sunshine State:"
                     android:textColor="@color/button_background_reset"
                     android:textSize="@dimen/team_label_size" />
 
-                <RadioGroup
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/plain_text_input"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RadioButton
-                        android:id="@+id/answer_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="@string/answer_4" />
-
-                    <RadioButton
-                        android:id="@+id/answer_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="@string/answer_5" />
-
-                    <RadioButton
-                        android:id="@+id/answer_6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="@string/answer_6" />
-                </RadioGroup>
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:inputType="text"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/question_3"
                     android:textColor="@color/button_background_reset"
                     android:textSize="@dimen/team_label_size" />
 
-                <RadioGroup
-                    android:layout_width="match_parent"
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="144dp"
+                    android:text="Pizza" />
 
-                    <RadioButton
-                        android:id="@+id/answer_7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="@string/answer_1" />
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="144dp"
+                    android:layout_marginTop="28dp"
+                    android:text="Coffee" />
 
-                    <RadioButton
-                        android:id="@+id/answer_8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="@string/answer_2" />
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="144dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Burger" />
 
-                    <RadioButton
-                        android:id="@+id/answer_9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="@string/answer_3" />
-                </RadioGroup>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/question_4"
                     android:textColor="@color/button_background_reset"
                     android:textSize="@dimen/team_label_size" />
@@ -153,6 +129,7 @@
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     android:orientation="vertical">
 
                     <RadioButton
@@ -327,6 +304,25 @@
                 </RadioGroup>
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/page_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/congrats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="Congrats!"
+                    android:textAlignment="center"
+                    android:textColor="@color/button_background_reset"
+                    android:textSize="@dimen/title_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
@@ -338,7 +334,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="8dp"
         android:background="@color/button_background_reset"
-        android:onClick="resetScores"
+        android:onClick="goBack"
         android:text="@string/back"
         android:textColor="@color/button_foreground" />
 
@@ -350,7 +346,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="8dp"
         android:background="@color/button_background_reset"
-        android:onClick="resetScores"
+        android:onClick="goNext"
         android:text="@string/next"
         android:textColor="@color/button_foreground" />
 </RelativeLayout>
